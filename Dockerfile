@@ -1,7 +1,9 @@
-FROM openjdk:11
+### vi Dockerfile
+# Pull base image 
+From tomcat:8-jre8 
 
-COPY target/example-0.0.1-SNAPSHOT.jar /
+# Maintainer
+MAINTAINER "valaxytech" 
 
-WORKDIR /
-
-CMD ["java", "-jar", "example-0.0.1-SNAPSHOT.jar"]
+# copy war file on to container 
+COPY ./webapp.war /usr/local/tomcat/webapps
